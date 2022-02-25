@@ -18,17 +18,23 @@ function countryId({ country }) {
     altSpellings,
   } = country[0];
   const currency = () => {
-    for (const [key, value] of Object.entries(currencies)) {
-      return `  ${value.name}`;
+    if(currencies){
+      for (const [key, value] of Object.entries(currencies)) {
+        return `  ${value.name}`;
+      }
     }
+    return 'no official currency '
   };
 
   const lang = () => {
-    const allLangs = [];
-    for (const [key, value] of Object.entries(languages)) {
-      allLangs.push(value);
+    if(languages){
+      const allLangs = [];
+      for (const [key, value] of Object.entries(languages)) {
+        allLangs.push(value);
+      }
+      return allLangs;
     }
-    return allLangs;
+  else return [' no official language']
   };
 const getborders = ()=>{
   if(borders){
@@ -89,10 +95,10 @@ const getborders = ()=>{
             <ul>
               <li className="font-bold text-2xl mb-2 sm:text-3xl h-6   hidden sm:inline-block">  </li>
                <li className="my-1.5 font-semibold">
-              Languages :<span className="font-medium">{currency()}</span>
+              Languages : <span className="font-medium">{currency()}</span>
               </li>
               <li className="my-1.5 font-semibold">
-              Languages :<span className="font-medium">
+              Languages : <span className="font-medium">
                   {lang().map((l) => {
                     return l + " ";
                   })}
@@ -102,7 +108,7 @@ const getborders = ()=>{
           </div>
             </div>
             <div className="flex flex-col sm:flex-row sm:items-center "> 
-            <div className="my-1.5 font-semibold"> Border Countries :</div>
+            <div className="my-1.5 font-semibold"> Border Countries : </div>
             <div className="font-medium"> {getborders()} </div>
              </div>
 
