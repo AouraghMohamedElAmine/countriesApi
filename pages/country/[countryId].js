@@ -4,6 +4,9 @@ import axios from "axios";
 import {useRouter} from 'next/router'
  
 function countryId({ country }) {
+if(!country[0]){
+  router.push('/')
+}
   const router = useRouter()
    const {
     name,
@@ -122,7 +125,7 @@ const getborders = ()=>{
 
 export default countryId;
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const { params } = context;
   const { data } = await axios.get(
     `https://restcountries.com/v3.1/alpha/${params.countryId}/`
@@ -135,16 +138,4 @@ export async function getStaticProps(context) {
   };
 }
 
-export async function getStaticPaths() {
-  const { data } = await axios.get("https://restcountries.com/v3.1/all");
-  const paths = data.map((c) => {
-    return {
-      params: { countryId: `${c.cca2}` },
-    };
-  });
-
-  return {
-    paths,
-    fallback: true,
-  };
-}
+ 
