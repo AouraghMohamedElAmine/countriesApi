@@ -98,7 +98,7 @@ const getborders = ()=>{
             <ul>
               <li className="font-bold text-2xl mb-2 sm:text-3xl h-6   hidden sm:inline-block">  </li>
                <li className="my-1.5 font-semibold">
-              Languages : <span className="font-medium">{currency()}</span>
+              Currencies : <span className="font-medium">{currency()}</span>
               </li>
               <li className="my-1.5 font-semibold">
               Languages : <span className="font-medium">

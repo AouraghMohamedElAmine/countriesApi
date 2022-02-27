@@ -1,4 +1,4 @@
-import { GET_FILTRED_COUNTRIES, GET_ALL_COUNTRIES , SET_FILTER } from "./constants";
+import { GET_FILTRED_COUNTRIES, GET_ALL_COUNTRIES , SET_FILTER, GET_SEARCHED_COUNTRIES } from "./constants";
 
 export const allCountriesReducer = (state = [], action) => {
   switch (action.type) {
@@ -12,6 +12,8 @@ export const allCountriesReducer = (state = [], action) => {
 export const filtredCountriesReducer = (state = [], action) => {
   switch (action.type) {
     case GET_FILTRED_COUNTRIES:
+      return action.payload;
+    case GET_SEARCHED_COUNTRIES:
       return action.payload;
     default:
       return state;

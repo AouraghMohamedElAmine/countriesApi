@@ -8,6 +8,7 @@ import Link from "next/link";
 import Dropdown from "../components/Dropdown";
 import { getAllCountries, GetFiltredCountries } from "../redux/actionsCreators";
 import {useDispatch ,useSelector} from "react-redux"
+import SearchBox from "../components/SearchBox";
 export default function Home() {
   const countries =  useSelector(state=>state.filtredCountries)
   const allCountries =  useSelector(state=>state.countries)
@@ -27,7 +28,7 @@ let data ;
     <div className="dark:text-dark dark:bg-darkBg bg-lightElement ">
       <Navbar />
       <div className="flex flex-col sm:flex-row sm:justify-between mx-8 my-8 ">
-        <div className="sm:w-4/6 "><input type='text'  className=" sm:w-3/6 w-full mb-8 sm:mb-0 shadow-md outline-none h-14 px-4  dark:bg-darkElement dark:border-darkElement  dark:text-white text-gray-800 border rounded-md " placeholder="search for a country " onChange={(e)=>e.target.value} /></div>
+        <div className="sm:w-4/6 "><SearchBox/></div>
         <div className="sm:w-2/6    "><Dropdown/></div>
       </div>
       <div className="mx-8 sm:grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4    gap-10 ">
