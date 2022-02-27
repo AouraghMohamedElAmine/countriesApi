@@ -3,7 +3,7 @@ import Image from "next/image";
 function CountryPannel({ name, population, region, capital, flag }) {
   return (
     <div className="flex flex-col my-7 sm:my-0 object-fill bg-white border overflow-hidden shadow-md   dark:border-darkBg  rounded-lg ">
-      <div className="bg-white">
+      <div className="dark:bg-darkBg">
         <img src={flag} alt={name} height="" className="h-48 w-full  " />
       </div>
       <div className="p-5 dark:bg-darkElement">

@@ -42,7 +42,7 @@ if(!country[0]){
 const getborders = ()=>{
   if(borders){
     const bordersList = borders.map(b =>{
-      return   <span className="mx-1.5 dark:bg-darkBg p-1"> {b} </span> 
+      return   <span className="mr-1.5   dark:bg-darkBg p-1   "> {b} </span> 
     })
     return bordersList
   }
@@ -55,7 +55,7 @@ const getborders = ()=>{
       <div className="dark:bg-darkElement">
         <button
           onClick={() => router.push("/")}
-          className="outline-md p-4 px-6 m-6 sm:m-10   bg-lightBg dark:bg-darkBg "
+          className="rounded-sm p-3 px-6 m-6 sm:m-10  bg-lightElement  shadow-md   dark:bg-darkBg "
         >
           Back
         </button>
@@ -81,7 +81,7 @@ const getborders = ()=>{
                 </span>
               </li>
               <li className="my-1.5 font-semibold">
-              Population :<span className="font-medium">{population}</span>
+              Population :<span className="font-medium  	tracking-widest			">{population.toString()}</span>
               </li>
               <li className="my-1.5 font-semibold">
               Region : <span className="font-medium">{region}.</span>
@@ -111,8 +111,8 @@ const getborders = ()=>{
           </div>
             </div>
             <div className="flex flex-col sm:flex-row sm:items-center "> 
-            <div className="my-1.5 font-semibold"> Border Countries : </div>
-            <div className="font-medium"> {getborders()} </div>
+            <div className="my-1.5 font-semibold "> Border Countries : </div>
+            <div className="font-medium "> {getborders()} </div>
              </div>
 
           </div>

@@ -25,13 +25,13 @@ const dispatch = useDispatch()
   }, [filter]);
 let data ;
   return (
-    <div className="dark:text-dark dark:bg-darkBg bg-lightElement ">
+    <div className="dark:text-dark dark:bg-darkBg bg-lightElement min-h-screen pb-10 ">
       <Navbar />
-      <div className="flex flex-col sm:flex-row sm:justify-between mx-8 my-8 ">
+      <div className="flex flex-col sm:flex-row sm:justify-between lg:mx-20 md:mx-14 mx-8 my-8 ">
         <div className="sm:w-4/6 "><SearchBox/></div>
         <div className="sm:w-2/6    "><Dropdown/></div>
       </div>
-      <div className="mx-8 sm:grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4    gap-10 ">
+      <div className="lg:mx-20 md:mx-14 mx-8 sm:grid  sm:grid-cols-2   lg:grid-cols-3 xl:grid-cols-4    gap-10 ">
          {   filter == 'all' ? 
           allCountries.map((c) => {
               return (
